@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF141DFE29A488F200C99786 /* DynamicLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF141DFD29A488F200C99786 /* DynamicLinkHandler.swift */; };
+		FF141E0029A4894000C99786 /* DynamicLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF141DFF29A4894000C99786 /* DynamicLinkCoordinator.swift */; };
+		FF141E0429A48A6500C99786 /* DynamicLinkCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF141E0329A48A6500C99786 /* DynamicLinkCoordinating.swift */; };
 		FF706D6929A3CC5A00D53546 /* FirstCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF706D6829A3CC5A00D53546 /* FirstCoordinating.swift */; };
 		FF706D6E29A3D5BC00D53546 /* SecondCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF706D6D29A3D5BC00D53546 /* SecondCoordinating.swift */; };
 		FF706D7029A3D5DA00D53546 /* ThirdCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF706D6F29A3D5DA00D53546 /* ThirdCoordinating.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF141DFD29A488F200C99786 /* DynamicLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkHandler.swift; sourceTree = "<group>"; };
+		FF141DFF29A4894000C99786 /* DynamicLinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkCoordinator.swift; sourceTree = "<group>"; };
+		FF141E0329A48A6500C99786 /* DynamicLinkCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkCoordinating.swift; sourceTree = "<group>"; };
 		FF706D6829A3CC5A00D53546 /* FirstCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCoordinating.swift; sourceTree = "<group>"; };
 		FF706D6D29A3D5BC00D53546 /* SecondCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCoordinating.swift; sourceTree = "<group>"; };
 		FF706D6F29A3D5DA00D53546 /* ThirdCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCoordinating.swift; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 				FF731341299CC006001167AD /* FirstCoordinator.swift */,
 				FF706D7129A3D5F100D53546 /* SecondCoordinator.swift */,
 				FF706D7329A3D5FA00D53546 /* ThirdCoordinator.swift */,
+				FF141DFF29A4894000C99786 /* DynamicLinkCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -72,6 +79,7 @@
 				FF73132B299CBAF1001167AD /* Assets.xcassets */,
 				FF731322299CBAEF001167AD /* AppDelegate.swift */,
 				FF731324299CBAEF001167AD /* SceneDelegate.swift */,
+				FF141DFD29A488F200C99786 /* DynamicLinkHandler.swift */,
 			);
 			path = APP;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 				FF706D6829A3CC5A00D53546 /* FirstCoordinating.swift */,
 				FF706D6D29A3D5BC00D53546 /* SecondCoordinating.swift */,
 				FF706D6F29A3D5DA00D53546 /* ThirdCoordinating.swift */,
+				FF141E0329A48A6500C99786 /* DynamicLinkCoordinating.swift */,
 			);
 			path = CoordinatorCore;
 			sourceTree = "<group>";
@@ -231,13 +240,16 @@
 				FF731323299CBAEF001167AD /* AppDelegate.swift in Sources */,
 				FF706D7229A3D5F100D53546 /* SecondCoordinator.swift in Sources */,
 				FF731325299CBAEF001167AD /* SceneDelegate.swift in Sources */,
+				FF141E0029A4894000C99786 /* DynamicLinkCoordinator.swift in Sources */,
 				FF73133A299CBCF5001167AD /* SecondViewController.swift in Sources */,
 				FF706D7429A3D5FA00D53546 /* ThirdCoordinator.swift in Sources */,
 				FF73133C299CBCFE001167AD /* ThirdViewController.swift in Sources */,
 				FF731342299CC006001167AD /* FirstCoordinator.swift in Sources */,
 				FF706D6929A3CC5A00D53546 /* FirstCoordinating.swift in Sources */,
+				FF141DFE29A488F200C99786 /* DynamicLinkHandler.swift in Sources */,
 				FF706D7029A3D5DA00D53546 /* ThirdCoordinating.swift in Sources */,
 				FF731337299CBCE3001167AD /* FirstViewController.swift in Sources */,
+				FF141E0429A48A6500C99786 /* DynamicLinkCoordinating.swift in Sources */,
 				FF73133F299CBEEA001167AD /* Coordinator.swift in Sources */,
 				FF706D7729A3D98300D53546 /* LoginViewController.swift in Sources */,
 				FF706D6E29A3D5BC00D53546 /* SecondCoordinating.swift in Sources */,

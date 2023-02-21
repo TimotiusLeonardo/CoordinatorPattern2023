@@ -10,7 +10,7 @@ import UIKit
 class ThirdCoordinator: ThirdCoordinating {
     var childCoordinators: [Coordinator] = []
     
-    var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
     
     func start() {
         

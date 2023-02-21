@@ -9,10 +9,6 @@ import Foundation
 import UIKit
 // import CoordinatorCore
 
-public protocol FirstViewControllerDelegate: AnyObject {
-    func navigateToNextPage()
-}
-
 class FirstViewController: UIViewController {
     
     var coordinator: (Coordinator & FirstCoordinating)?

@@ -6,7 +6,11 @@
 //
 
 import UIKit
+/// Kalo sudah jadi module per feature bisa pake import di bawah
 // import Coordinator
+
+/// Kalo belom jadi module per feature, mending bikin Coordinator sendiri sementara agar tidak cycle
+/// Jadikan 1 aja Coordinator Module dengan App Module agar tidak import import
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -54,6 +58,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    // Example For URLSchemeHandler
+    func goToLoginCoordinator() {
+        // You can go with original Flow
+        
     }
 
 

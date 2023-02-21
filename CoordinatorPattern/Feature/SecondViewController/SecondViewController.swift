@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var coordinator: SecondCoordinating?
+    weak var coordinator: SecondCoordinating?
     
     lazy var button: UIButton = {
         let button = UIButton()

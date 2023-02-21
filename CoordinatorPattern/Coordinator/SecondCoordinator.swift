@@ -8,11 +8,11 @@
 import UIKit
 // import Feature
 
-class SecondCoordinator: SecondCoordinating {
+class SecondCoordinator: NSObject, SecondCoordinating {
     weak var parentCoordinator: (Coordinator & Any)?
     var childCoordinators: [Coordinator] = []
     
-    var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -27,10 +27,16 @@ class SecondCoordinator: SecondCoordinating {
     func goToLoginController() {
         let loginContoller = LoginViewController()
         loginContoller.didLoginSuccess = { [weak self] in
-            self?.navigationController?.popToRootViewController(animated: true)
-            let parentCoordinator = self?.parentCoordinator as? FirstCoordinating
+            guard let self = self else { return }
+            self.navigationController?.popToRootViewController(animated: true)
+            let parentCoordinator = self.parentCoordinator as? FirstCoordinating
             parentCoordinator?.goToThirdPage()
+            parentCoordinator?.childDidFinish(self)
         }
         navigationController?.pushViewController(loginContoller, animated: true)
+    }
+    
+    deinit {
+        print("Second Coordinator dismissed")
     }
 }
