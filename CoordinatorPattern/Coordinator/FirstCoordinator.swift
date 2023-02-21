@@ -11,7 +11,7 @@ import UIKit
 
 class FirstCoordinator: NSObject, FirstCoordinating {
     // use this variable to coordinate when user click dynamic link
-    var dynamicLinkCoordinator: DynamicLinkCoordinator?
+    weak var dynamicLinkCoordinator: DynamicLinkCoordinator?
     var childCoordinators: [Coordinator] = []
     
     weak var navigationController: UINavigationController?
@@ -23,9 +23,17 @@ class FirstCoordinator: NSObject, FirstCoordinating {
     func start() {
         let firstViewController: FirstViewController = FirstViewController()
         firstViewController.coordinator = self
-        dynamicLinkCoordinator = DynamicLinkCoordinator(navigationController: navigationController, firstCoordinator: self)
         navigationController?.pushViewController(firstViewController, animated: false)
         navigationController?.delegate = self
+        
+        setupDynamicLinkHelper()
+    }
+    
+    private func setupDynamicLinkHelper() {
+        let _dynamicLinkCoordinator = DynamicLinkCoordinator(firstCoordinator: self)
+        dynamicLinkCoordinator = _dynamicLinkCoordinator
+        guard let dynamicLinkCoordinator = self.dynamicLinkCoordinator else { return }
+        childCoordinators.append(dynamicLinkCoordinator)
     }
     
     func goToSecondPage() {
@@ -45,6 +53,31 @@ class FirstCoordinator: NSObject, FirstCoordinating {
         /// When third page dont have own coordinator
         let thirdPage: ThirdViewController = ThirdViewController()
         navigationController?.pushViewController(thirdPage, animated: true)
+    }
+    
+    func loginTappedTRIGGER() {
+        // Tell dynamic link to handle login button from dynamic URL
+        dynamicLinkCoordinator?.loginTapped()
+    }
+    
+    func loginTapped() {
+        let loginViewController = LoginViewController()
+        self.navigationController?.pushViewController(loginViewController, animated: true)
+        
+        
+        /// Semisal ada popup di depan navigation kita
+//        let VC = UIViewController()
+//        VC.view.backgroundColor = .red
+//        navigationController?.present(VC, animated: true)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            // Dismiss any popup that existed
+//            self.navigationController?.dismissAnyPopup()
+//            // Then we push view controller
+//            let loginViewController = LoginViewController()
+//            self.navigationController?.pushViewController(loginViewController, animated: true)
+//        }
+        
     }
     
 }

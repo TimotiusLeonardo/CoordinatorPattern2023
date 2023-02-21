@@ -37,13 +37,28 @@ class FirstViewController: UIViewController {
         return button
     }()
     
+    lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Login!", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+//        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(progStackView)
         progStackView.addArrangedSubview(button)
         progStackView.addArrangedSubview(thirdPageButton)
+        progStackView.addArrangedSubview(loginButton)
         
         progStackView.frame = view.frame
+        
+        
+        // COBA TRIGGER NOTIFIKASI
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.coordinator?.loginTappedTRIGGER()
+        }
         
         title = "First View Controller"
     }
@@ -55,4 +70,8 @@ class FirstViewController: UIViewController {
     @objc func goToThirdPageAction() {
         coordinator?.goToThirdPage()
     }
+    
+//    @objc func loginTapped() {
+//        coordinator?.loginTappedTRIGGER()
+//    }
 }

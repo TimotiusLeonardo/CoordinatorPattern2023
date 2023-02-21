@@ -9,17 +9,21 @@ import Foundation
 import UIKit
 
 class DynamicLinkCoordinator: DynamicLinkCoordinating {
-    var parentCoordinator: FirstCoordinator
+    weak var parentCoordinator: FirstCoordinator?
     var childCoordinators: [Coordinator] = []
     
+    // Let it nil
     weak var navigationController: UINavigationController?
     
-    init(navigationController: UINavigationController?, firstCoordinator: FirstCoordinator) {
-        self.navigationController = navigationController
+    init(firstCoordinator: FirstCoordinator) {
         self.parentCoordinator = firstCoordinator
     }
     
     func start() {
         //
+    }
+    
+    func loginTapped() {
+        parentCoordinator?.loginTapped()
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DynamicLinkCoordinating: Coordinator {
-    //
+    func loginTapped()
 }

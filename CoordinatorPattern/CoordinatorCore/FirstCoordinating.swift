@@ -12,4 +12,6 @@ protocol FirstCoordinating: Coordinator {
     
     func goToSecondPage()
     func goToThirdPage()
+    func loginTapped()
+    func loginTappedTRIGGER()
 }
